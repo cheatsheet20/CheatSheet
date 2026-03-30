@@ -1,160 +1,62 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@300;500;700&display=swap');
+/* General Setup */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-:root {
-    --primary-cyan: #00d2ff;
-    --primary-green: #34e89e;
-    --dark-bg: #ffffff; /* আপনার লোগোর ব্যাকগ্রাউন্ড সাদা তাই এটি সাদা রাখছি */
-    --text-color: #2d3436;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', 'Hind Siliguri', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
-/* Navbar */
-.navbar {
+.dashboard-body {
+    background-color: #0a0a0a; /* Ultra Dark Background */
+    color: #ffffff;
+    padding: 30px 15px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-color);
-}
-
-.logo span {
-    color: var(--primary-cyan);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-.nav-links li {
-    margin-left: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.nav-btn {
-    background: linear-gradient(135deg, var(--primary-cyan), var(--primary-green));
-    color: white !important;
-    padding: 10px 25px;
-    border-radius: 50px;
-}
-
-/* Hero Section */
-.hero {
-    height: 90vh;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    background: radial-gradient(circle at top right, #e3fdf5, #ffe6fa); /* হালকা সফট ব্যাকগ্রাউন্ড */
+    align-items: center;
+    min-height: 100vh;
 }
 
-.brand-logo {
-    width: 150px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+/* Bento Grid Layout like Taktix */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 160px);
+    gap: 16px;
+    max-width: 1000px;
+    width: 100%;
 }
 
-.hero h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
-    letter-spacing: -1px;
-    background: linear-gradient(to right, #00d2ff, #34e89e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.slogan-en {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #636e72;
-    margin-bottom: 10px;
-}
-
-.slogan-bn {
-    font-size: 2rem;
-    color: #2d3436;
-    margin-bottom: 25px;
-}
-
-.description {
-    max-width: 600px;
-    margin: 0 auto 35px;
-    color: #636e72;
-}
-
-/* Buttons */
-.cta-group {
+/* Card Styling */
+.card {
+    background: #141414; /* Darker Grey Card */
+    border: 1px solid #222;
+    border-radius: 24px;
+    padding: 24px;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
     justify-content: center;
+    transition: all 0.4s ease;
+    overflow: hidden;
 }
 
-.btn-primary {
-    text-decoration: none;
-    background: linear-gradient(135deg, var(--primary-cyan), var(--primary-green));
-    color: white;
-    padding: 15px 35px;
-    border-radius: 50px;
-    font-weight: 600;
-    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
-    transition: 0.3s;
+.card:hover {
+    border-color: #34e89e;
+    transform: translateY(-5px);
+    background: #1a1a1a;
 }
 
-.btn-secondary {
-    text-decoration: none;
-    border: 2px solid var(--primary-cyan);
-    color: var(--primary-cyan);
-    padding: 15px 35px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: 0.3s;
-}
+/* Positioning */
+.brand-card { grid-column: span 2; }
+.item-wide { grid-column: span 2; }
+.founder-card { grid-column: span 2; flex-direction: row; align-items: center; justify-content: space-between; border-left: 4px solid #34e89e; }
 
-.btn-primary:hover, .btn-secondary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
+/* Icon & Elements */
+.icon-cyan { color: #00d2ff; font-size: 2rem; margin-bottom: 12px; }
+.icon-green { color: #34e89e; font-size: 2rem; margin-bottom: 12px; }
+.dash-logo { width: 140px; margin-bottom: 10px; }
+.slogan { font-size: 0.9rem; color: #888; font-style: italic; }
+.card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.card span { color: #666; font-size: 0.8rem; }
+.badge { background: #34e89e; color: #000; font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 20px; width: fit-content; margin-bottom: 10px; }
+.founder-img { width: 50px; height: 50px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #34e89e; border: 1px solid #333; }
 
-.footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    color: #b2bec3;
+/* Responsive Mobile View */
+@media (max-width: 800px) {
+    .bento-grid { display: flex; flex-direction: column; }
+    .card { min-height: 140px; }
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .slogan-bn { font-size: 1.5rem; }
-    .cta-group { flex-direction: column; }
-    .nav-links { display: none; }
-  }
