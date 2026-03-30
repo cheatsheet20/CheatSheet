@@ -1,62 +1,57 @@
-/* General Setup */
+/* Full Website Styling */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-.dashboard-body {
-    background-color: #0a0a0a; /* Ultra Dark Background */
+body {
+    background-color: #0a0a0a; /* Dark background like Taktix */
     color: #ffffff;
-    padding: 30px 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
-/* Bento Grid Layout like Taktix */
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background: #111;
+    align-items: center;
+}
+
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: #fff; text-decoration: none; font-size: 14px; }
+.nav-btn { background: #34e89e; color: #000 !important; padding: 8px 18px; border-radius: 50px; font-weight: bold; }
+
+/* Dashboard Bento Grid Layout */
+.dashboard-body {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 160px);
-    gap: 16px;
+    gap: 15px;
     max-width: 1000px;
     width: 100%;
 }
 
-/* Card Styling */
 .card {
-    background: #141414; /* Darker Grey Card */
-    border: 1px solid #222;
-    border-radius: 24px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: all 0.4s ease;
-    overflow: hidden;
+    background: #181818;
+    border: 1px solid #282828;
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.3s;
 }
 
-.card:hover {
-    border-color: #34e89e;
-    transform: translateY(-5px);
-    background: #1a1a1a;
-}
+.card:hover { border-color: #34e89e; transform: translateY(-5px); }
 
-/* Positioning */
+/* Grid Mapping */
 .brand-card { grid-column: span 2; }
 .item-wide { grid-column: span 2; }
-.founder-card { grid-column: span 2; flex-direction: row; align-items: center; justify-content: space-between; border-left: 4px solid #34e89e; }
+.founder-card { grid-column: span 2; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid #34e89e; }
 
-/* Icon & Elements */
-.icon-cyan { color: #00d2ff; font-size: 2rem; margin-bottom: 12px; }
-.icon-green { color: #34e89e; font-size: 2rem; margin-bottom: 12px; }
-.dash-logo { width: 140px; margin-bottom: 10px; }
-.slogan { font-size: 0.9rem; color: #888; font-style: italic; }
-.card h3 { font-size: 1.1rem; margin-bottom: 6px; }
-.card span { color: #666; font-size: 0.8rem; }
-.badge { background: #34e89e; color: #000; font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 20px; width: fit-content; margin-bottom: 10px; }
-.founder-img { width: 50px; height: 50px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #34e89e; border: 1px solid #333; }
-
-/* Responsive Mobile View */
-@media (max-width: 800px) {
+/* Mobile View */
+@media (max-width: 768px) {
     .bento-grid { display: flex; flex-direction: column; }
-    .card { min-height: 140px; }
+    .card { min-height: 120px; }
 }
